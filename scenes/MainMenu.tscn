@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbplqxkaqi83r"]
+
+[ext_resource type="Script" path="res://src/UI/MainMenu.gd" id="1_62wd7"]
+[ext_resource type="Script" path="res://src/UI/ChangeSceneButton.gd" id="2_5fb6k"]
+[ext_resource type="PackedScene" uid="uid://dp02anwflcyv8" path="res://scenes/OptionsWindow.tscn" id="2_eahdg"]
+[ext_resource type="Script" path="res://src/UI/ShowPopupButton.gd" id="3_pto1d"]
+[ext_resource type="Script" path="res://src/UI/QuitButton.gd" id="4_kgmp6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8bkd4"]
+font_size = 52
+
+[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("first_to_focus")]
+script = ExtResource("1_62wd7")
+first_to_focus = NodePath("Menu/Menu/Start")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="Header" type="Label" parent="Menu"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 175.0
+grow_horizontal = 2
+text = "Epic Megagame"
+label_settings = SubResource("LabelSettings_8bkd4")
+horizontal_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="Menu"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -324.0
+offset_right = 300.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="Menu/Menu"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_5fb6k")
+next_scene_name = "res://scenes/Game.tscn"
+
+[node name="Options" type="Button" parent="Menu/Menu" node_paths=PackedStringArray("popup")]
+layout_mode = 2
+text = "Options"
+script = ExtResource("3_pto1d")
+popup = NodePath("../../../OptionsWindow")
+
+[node name="Credits" type="Button" parent="Menu/Menu" node_paths=PackedStringArray("popup")]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("3_pto1d")
+popup = NodePath("../../../CreditsWindow")
+
+[node name="Quit" type="Button" parent="Menu/Menu"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("4_kgmp6")
+
+[node name="OptionsWindow" parent="." instance=ExtResource("2_eahdg")]
+position = Vector2i(490, 250)
+visible = false
+
+[node name="CreditsWindow" type="PopupPanel" parent="."]
+title = "Credits"
+position = Vector2i(405, 184)
+size = Vector2i(365, 325)
+borderless = false
+content_scale_mode = 1
+
+[node name="CreditsLabel" type="RichTextLabel" parent="CreditsWindow"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 361.0
+offset_bottom = 321.0
+bbcode_enabled = true
+text = "[center][b]Epic Megagame[/b][/center]
+
+Brought to you by:
+[ul]
+[b]Yngvarr[/b] - code and game design.
+[b]Syudzius[/b] - art and also game design.
+[/ul]
+
+With use of these 3rd party assets:
+[ul]
+[b]White square[/b] by squaresausage [i](via [url=https://hardweird.net]his personal site[/url])[/i].
+[/ul]
+
+Special thanks to all my homies!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
