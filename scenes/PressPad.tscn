@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuk26q7f3uvoj"]
+
+[ext_resource type="Texture2D" uid="uid://dwic3loiiqbh1" path="res://img/Shadow.svg" id="1_qkccm"]
+[ext_resource type="Texture2D" uid="uid://deh7eceoe2fjj" path="res://img/Outside.svg" id="1_u57qi"]
+[ext_resource type="Texture2D" uid="uid://b12wlvh4qdoa0" path="res://img/Inside.svg" id="3_415o6"]
+[ext_resource type="Texture2D" uid="uid://bp73dpgqxwox2" path="res://img/Display.svg" id="4_col5o"]
+
+[node name="PressPad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Shadow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 60.0
+offset_bottom = 64.0
+texture = ExtResource("1_qkccm")
+
+[node name="Outside" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u57qi")
+
+[node name="Inside" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 58.0
+offset_bottom = 58.0
+texture = ExtResource("3_415o6")
+
+[node name="Display" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 54.0
+offset_bottom = 54.0
+texture = ExtResource("4_col5o")
