@@ -29,10 +29,10 @@ func _gui_input(event: InputEvent) -> void:
 	handle_movement(event)
 
 func set_value(new_value: float) -> void:
-	var clamped = clamp(new_value, lowest_value, highest_value)
-	var whole = highest_value - lowest_value
-	var part = clamped / whole
-	var whole_degrees = highest_degrees - lowest_degrees
+	var clamped: float = clamp(new_value, lowest_value, highest_value)
+	var whole := highest_value - lowest_value
+	var part := clamped / whole
+	var whole_degrees := highest_degrees - lowest_degrees
 
 	top.rotation_degrees = lowest_degrees + whole_degrees * part
 	value = clamped
@@ -45,8 +45,8 @@ func handle_movement(event: InputEvent) -> void:
 	if not is_grabbed:
 		return
 
-	var delta = -event.relative.y * step
-	set_value(int(value + delta) if integer else value + delta)
+	var delta: float = -event.relative.y * step
+	set_value(floor(value + delta) if integer else value + delta)
 
 func handle_click(event: InputEvent) -> void:
 	if not event is InputEventMouseButton\
