@@ -1,22 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsjpl5sxdtvmq"]
+[gd_scene load_steps=4 format=3 uid="uid://dsjpl5sxdtvmq"]
 
+[ext_resource type="Script" path="res://src/LCDPad.gd" id="1_6s5l4"]
 [ext_resource type="PackedScene" uid="uid://cuk26q7f3uvoj" path="res://scenes/PressPad.tscn" id="1_nb73u"]
-[ext_resource type="Texture2D" uid="uid://bp73dpgqxwox2" path="res://img/Display.svg" id="2_8fjwy"]
+[ext_resource type="PackedScene" uid="uid://dwvb38wr6g7rv" path="res://scenes/PadDisplay.tscn" id="2_6kmff"]
 
-[node name="LCDPad" type="Control"]
+[node name="LCDPad" type="Control" node_paths=PackedStringArray("display")]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_6s5l4")
+display = NodePath("PressPad/TopPart/PadDisplay")
 
 [node name="PressPad" parent="." instance=ExtResource("1_nb73u")]
 
-[node name="Display" type="TextureRect" parent="PressPad/TopPart" index="2"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 54.0
-offset_bottom = 54.0
-texture = ExtResource("2_8fjwy")
+[node name="PadDisplay" parent="PressPad/TopPart" index="2" instance=ExtResource("2_6kmff")]
+position = Vector2(30, 30)
 
 [editable path="PressPad"]

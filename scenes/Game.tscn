@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://csahdmph2aji4"]
 
 [ext_resource type="Script" path="res://src/Game.gd" id="1_wmfvw"]
-[ext_resource type="PackedScene" uid="uid://cuk26q7f3uvoj" path="res://scenes/PressPad.tscn" id="2_41lko"]
+[ext_resource type="PackedScene" uid="uid://dsjpl5sxdtvmq" path="res://scenes/LCDPad.tscn" id="3_lqy58"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wmfvw")
@@ -20,245 +20,245 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 9
 
-[node name="PressPad" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad2" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad2" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad3" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad3" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad4" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad4" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad5" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad5" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad6" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad6" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad7" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad7" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad8" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad8" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad9" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad9" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad10" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad10" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad11" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad11" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad12" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad12" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad13" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad13" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad14" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad14" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad15" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad15" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad16" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad16" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad17" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad17" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad18" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad18" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad19" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad19" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad20" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad20" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad21" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad21" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad22" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad22" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad23" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad23" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad24" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad24" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad25" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad25" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad26" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad26" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad27" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad27" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad28" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad28" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad29" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad29" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad30" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad30" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad31" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad31" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad32" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad32" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad33" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad33" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad34" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad34" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad35" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad35" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad36" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad36" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad37" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad37" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad38" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad38" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad39" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad39" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad40" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad40" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad41" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad41" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad42" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad42" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad43" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad43" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad44" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad44" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad45" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad45" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad46" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad46" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad47" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad47" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad48" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad48" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad49" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad49" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad50" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad50" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad51" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad51" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad52" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad52" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad53" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad53" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad54" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad54" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad55" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad55" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad56" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad56" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad57" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad57" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad58" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad58" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad59" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad59" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad60" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad60" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad61" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad61" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad62" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad62" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad63" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad63" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad64" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad64" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad65" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad65" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad66" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad66" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad67" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad67" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad68" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad68" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad69" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad69" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad70" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad70" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad71" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad71" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad72" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad72" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad73" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad73" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad74" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad74" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad75" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad75" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad76" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad76" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad77" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad77" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad78" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad78" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad79" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad79" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad80" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad80" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
 
-[node name="PressPad81" parent="HUD/Grid" instance=ExtResource("2_41lko")]
+[node name="PressPad81" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
