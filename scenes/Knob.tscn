@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://qdwx3kd7wyd2"]
+
+[ext_resource type="Texture2D" uid="uid://b3134du15q0rp" path="res://img/knob/Base.svg" id="1_8k1gc"]
+[ext_resource type="Script" path="res://src/Knob.gd" id="1_l0q55"]
+[ext_resource type="Texture2D" uid="uid://b226x46rbja3u" path="res://img/knob/Top.svg" id="2_agn4q"]
+[ext_resource type="Texture2D" uid="uid://drmn122s2hmty" path="res://img/knob/Line.svg" id="3_2t6ik"]
+
+[node name="Knob" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l0q55")
+default_value = 0.0
+highest_value = 4.0
+step = 0.01
+
+[node name="Base" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_top = 5.0
+offset_right = 54.0
+offset_bottom = 67.0
+texture = ExtResource("1_8k1gc")
+
+[node name="Top" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_right = 53.0
+offset_bottom = 52.0
+texture = ExtResource("2_agn4q")
+
+[node name="TopPart" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 26.0
+offset_bottom = 26.0
+mouse_filter = 1
+
+[node name="Line" type="TextureRect" parent="TopPart"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -25.0
+offset_right = 1.0
+offset_bottom = 1.0
+texture = ExtResource("3_2t6ik")

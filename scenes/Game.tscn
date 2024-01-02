@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csahdmph2aji4"]
+[gd_scene load_steps=4 format=3 uid="uid://csahdmph2aji4"]
 
 [ext_resource type="Script" path="res://src/Game.gd" id="1_wmfvw"]
 [ext_resource type="PackedScene" uid="uid://dsjpl5sxdtvmq" path="res://scenes/LCDPad.tscn" id="3_lqy58"]
+[ext_resource type="PackedScene" uid="uid://qdwx3kd7wyd2" path="res://scenes/Knob.tscn" id="3_um6dn"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wmfvw")
@@ -262,3 +263,9 @@ layout_mode = 2
 
 [node name="PressPad81" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
+
+[node name="Knob" parent="." instance=ExtResource("3_um6dn")]
+offset_left = 743.0
+offset_top = 194.0
+offset_right = 743.0
+offset_bottom = 194.0
