@@ -3,10 +3,9 @@ extends Control
 
 signal grabbed
 signal released
-signal value_changed
+signal value_changed(value: float)
 
 @export_category("Value")
-@export var integer := false
 @export var default_value: float = 50
 @export var lowest_value: float = 0
 @export var highest_value: float = 100
@@ -23,20 +22,27 @@ var value: float
 
 func _ready() -> void:
 	set_value(default_value)
+	print("knob ready")
 
 func _gui_input(event: InputEvent) -> void:
 	handle_click(event)
 	handle_movement(event)
 
-func set_value(new_value: float) -> void:
-	var clamped: float = clamp(new_value, lowest_value, highest_value)
+func get_degrees_from_value(val: float) -> float:
+	var clamped: float = clamp(val, lowest_value, highest_value)
 	var whole := highest_value - lowest_value
 	var part := clamped / whole
 	var whole_degrees := highest_degrees - lowest_degrees
 
-	top.rotation_degrees = lowest_degrees + whole_degrees * part
+	return lowest_degrees + whole_degrees * part
+
+func set_value(new_value: float, silent := false) -> void:
+	var clamped: float = clamp(new_value, lowest_value, highest_value)
+
+	top.rotation_degrees = get_degrees_from_value(clamped)
 	value = clamped
-	print("value ", value)
+	if not silent:
+		value_changed.emit(value)
 
 func handle_movement(event: InputEvent) -> void:
 	if not event is InputEventMouseMotion:
@@ -46,7 +52,7 @@ func handle_movement(event: InputEvent) -> void:
 		return
 
 	var delta: float = -event.relative.y * step
-	set_value(floor(value + delta) if integer else value + delta)
+	set_value(value + delta)
 
 func handle_click(event: InputEvent) -> void:
 	if not event is InputEventMouseButton\

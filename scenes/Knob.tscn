@@ -7,12 +7,9 @@
 
 [node name="Knob" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_l0q55")
+default_value = 80.0
 
 [node name="Base" type="TextureRect" parent="."]
 texture_filter = 2

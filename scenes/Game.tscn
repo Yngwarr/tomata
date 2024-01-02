@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csahdmph2aji4"]
+[gd_scene load_steps=5 format=3 uid="uid://csahdmph2aji4"]
 
 [ext_resource type="Script" path="res://src/Game.gd" id="1_wmfvw"]
 [ext_resource type="PackedScene" uid="uid://dsjpl5sxdtvmq" path="res://scenes/LCDPad.tscn" id="3_lqy58"]
 [ext_resource type="PackedScene" uid="uid://qdwx3kd7wyd2" path="res://scenes/Knob.tscn" id="3_um6dn"]
+[ext_resource type="PackedScene" uid="uid://0iqhotbf07b2" path="res://scenes/SnappingKnob.tscn" id="4_3leu0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wmfvw")
@@ -269,3 +270,12 @@ offset_left = 743.0
 offset_top = 194.0
 offset_right = 743.0
 offset_bottom = 194.0
+default_value = 5.0
+highest_value = 10.0
+step = 0.05
+
+[node name="SnappingKnob" parent="." instance=ExtResource("4_3leu0")]
+offset_left = 819.0
+offset_top = 195.0
+offset_right = 819.0
+offset_bottom = 195.0
