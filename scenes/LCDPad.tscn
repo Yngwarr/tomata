@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsjpl5sxdtvmq"]
+
+[ext_resource type="PackedScene" uid="uid://cuk26q7f3uvoj" path="res://scenes/PressPad.tscn" id="1_nb73u"]
+[ext_resource type="Texture2D" uid="uid://bp73dpgqxwox2" path="res://img/Display.svg" id="2_8fjwy"]
+
+[node name="LCDPad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PressPad" parent="." instance=ExtResource("1_nb73u")]
+
+[node name="Display" type="TextureRect" parent="PressPad/TopPart" index="2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 54.0
+offset_bottom = 54.0
+texture = ExtResource("2_8fjwy")
+
+[editable path="PressPad"]
