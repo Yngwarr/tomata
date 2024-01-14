@@ -3,7 +3,11 @@ extends Sprite2D
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
-func play_wave() -> void:
+func play_anim(anim_name: String):
 	if anim.is_playing():
 		anim.stop()
-	anim.play("wave")
+	anim.play(anim_name)
+
+## deprecated
+func play_wave() -> void:
+	play_anim("wave")
