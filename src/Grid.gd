@@ -1,6 +1,8 @@
 class_name Grid
 extends GridContainer
 
+signal bounced(number: int)
+
 @export var direction_knob: SnappingKnob
 @export var start_pad: PressPad
 @export var beat_timer: Timer
@@ -111,13 +113,17 @@ func step_to(start: int, direction: Game.PadState) -> int:
 		_:
 			return -1
 
-func state_to(start: int, direction: Game.PadState) -> Game.PadState:
+func state_to(start: int, direction: Game.PadState, on_buffer := false) -> int:
 	var step_index := step_to(start, direction)
 
 	if step_index == -1:
 		return Game.PadState.WALL
 
-	return pads[step_index].state
+	return buffer[step_index] if on_buffer else pads[step_index].state
+
+func is_horizontal(state: int) -> bool:
+	return state == Game.PadState.LEFT \
+		|| Game.PadState.RIGHT
 
 func is_single_bit(state: int) -> bool:
 	return state == Game.PadState.LEFT \
@@ -157,7 +163,6 @@ func step() -> void:
 		if up & Game.PadState.DOWN > 0: buffer[i] |= Game.PadState.DOWN
 		if down & Game.PadState.UP > 0: buffer[i] |= Game.PadState.UP
 
-		# TODO add sounds here
 		if state & Game.PadState.LEFT > 0 && left == Game.PadState.WALL:
 			buffer[i] |= Game.PadState.RIGHT
 		if state & Game.PadState.RIGHT > 0 && right == Game.PadState.WALL:
@@ -169,6 +174,13 @@ func step() -> void:
 
 	for i in range(length):
 		pads[i].change_state(buffer[i])
+
+		if buffer[i] != Game.PadState.EMPTY \
+			and is_single_bit(buffer[i]) \
+			and state_to(i, buffer[i], true) == Game.PadState.WALL:
+
+			@warning_ignore("integer_division")
+			bounced.emit(i % columns if is_horizontal(buffer[i]) else i / columns)
 
 func test_near_walls() -> void:
 	assert(columns > 1, "this test makes no sense when columns == 1")

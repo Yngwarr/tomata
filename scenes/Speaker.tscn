@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmk4coljo6jb3"]
+
+[ext_resource type="Script" path="res://src/Speaker.gd" id="1_0wly5"]
+
+[node name="Speaker" type="Node"]
+script = ExtResource("1_0wly5")

@@ -5,8 +5,8 @@ extends Node2D
 ## where your dreams come true! Adjust to your likings and may the code be with
 ## you.
 
-@onready var start_pad: PressPad = $StartPad
-@onready var direction_knob: SnappingKnob = $DirectionKnob
+@onready var speaker: Speaker = $Speaker
+@onready var grid: Grid = $HUD/Grid
 
 enum PadState {
 	EMPTY = 0,
@@ -18,7 +18,4 @@ enum PadState {
 }
 
 func _ready() -> void:
-	start_pad.pressed.connect(start)
-
-func start() -> void:
-	pass
+	grid.bounced.connect(speaker.play_sound)
