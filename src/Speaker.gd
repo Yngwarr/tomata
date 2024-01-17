@@ -9,5 +9,4 @@ func _ready() -> void:
 		player.append(c)
 
 func play_sound(number: int) -> void:
-	print("bounce", number)
 	player[number].play()

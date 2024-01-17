@@ -92,6 +92,9 @@ func near_walls(index: int) -> int:
 		state |= Game.PadState.DOWN
 	return state
 
+func wall_ahead_to(start: int, direction: int) -> int:
+	return near_walls(step_to(start, direction)) & direction != 0
+
 func step_to(start: int, direction: Game.PadState) -> int:
 	assert(direction != Game.PadState.EMPTY, "Direction can't be empty.")
 	assert(direction != Game.PadState.WALL, "Direction can't be a wall.")
@@ -163,14 +166,18 @@ func step() -> void:
 		if up & Game.PadState.DOWN > 0: buffer[i] |= Game.PadState.DOWN
 		if down & Game.PadState.UP > 0: buffer[i] |= Game.PadState.UP
 
-		if state & Game.PadState.LEFT > 0 && left == Game.PadState.WALL:
-			buffer[i] |= Game.PadState.RIGHT
-		if state & Game.PadState.RIGHT > 0 && right == Game.PadState.WALL:
-			buffer[i] |= Game.PadState.LEFT
-		if state & Game.PadState.UP > 0 && up == Game.PadState.WALL:
-			buffer[i] |= Game.PadState.DOWN
-		if state & Game.PadState.DOWN > 0 && down == Game.PadState.WALL:
-			buffer[i] |= Game.PadState.UP
+		if left & Game.PadState.LEFT:
+			if wall_ahead_to(i, Game.PadState.LEFT):
+				buffer[i] |= Game.PadState.RIGHT
+		if right & Game.PadState.RIGHT:
+			if wall_ahead_to(i, Game.PadState.RIGHT):
+				buffer[i] |= Game.PadState.LEFT
+		if up & Game.PadState.UP:
+			if wall_ahead_to(i, Game.PadState.UP):
+				buffer[i] |= Game.PadState.DOWN
+		if down & Game.PadState.DOWN:
+			if wall_ahead_to(i, Game.PadState.DOWN):
+				buffer[i] |= Game.PadState.UP
 
 	for i in range(length):
 		pads[i].change_state(buffer[i])
