@@ -138,6 +138,11 @@ func rotate_bits(state: int) -> int:
 func step() -> void:
 	var length := len(buffer)
 	for i in range(length):
+		var state: int = pads[i].state
+
+		if not is_single_bit(state):
+			pads[i].state = rotate_bits(state)
+
 		buffer[i] = Game.PadState.EMPTY
 
 	for i in range(length):
@@ -146,9 +151,6 @@ func step() -> void:
 		var right := state_to(i, Game.PadState.RIGHT)
 		var up := state_to(i, Game.PadState.UP)
 		var down := state_to(i, Game.PadState.DOWN)
-
-		if not is_single_bit(state):
-			state = rotate_bits(state)
 
 		if left & Game.PadState.RIGHT > 0: buffer[i] |= Game.PadState.RIGHT
 		if right & Game.PadState.LEFT > 0: buffer[i] |= Game.PadState.LEFT

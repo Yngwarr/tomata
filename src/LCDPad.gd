@@ -9,7 +9,7 @@ signal released(index: int)
 @onready var pad: PressPad = $PressPad
 
 var index: int
-var state: Game.PadState
+var state: int
 
 func _ready() -> void:
 	pad.pressed.connect(on_pressed)
