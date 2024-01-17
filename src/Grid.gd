@@ -2,6 +2,8 @@ class_name Grid
 extends GridContainer
 
 @export var direction_knob: SnappingKnob
+@export var start_pad: PressPad
+@export var beat_timer: Timer
 
 var pads: Array[LCDPad]
 var buffer: Array[int]
@@ -36,6 +38,9 @@ func _ready() -> void:
 	Test.run(test_near_walls)
 	Test.run(test_step_to)
 
+	start_pad.pressed.connect(on_start_pad_pressed)
+	beat_timer.timeout.connect(step)
+
 	var pad_index: int = 0
 	for i in range(get_child_count()):
 		var c = get_child(i)
@@ -46,6 +51,13 @@ func _ready() -> void:
 		pad_index += 1
 		pads.append(c)
 		buffer.append(Game.PadState.EMPTY)
+
+func on_start_pad_pressed():
+	if beat_timer.is_stopped():
+		step()
+		beat_timer.start()
+	else:
+		beat_timer.stop()
 
 func get_direction() -> Game.PadState:
 	assert(direction_knob.value >= 0 and direction_knob.value < 4, "Direction knob value must be in [0;3], got %d" % direction_knob.value)

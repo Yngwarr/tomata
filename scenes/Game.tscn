@@ -12,7 +12,7 @@ script = ExtResource("1_wmfvw")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Grid" type="GridContainer" parent="HUD" node_paths=PackedStringArray("direction_knob")]
+[node name="Grid" type="GridContainer" parent="HUD" node_paths=PackedStringArray("direction_knob", "start_pad", "beat_timer")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,6 +25,8 @@ grow_vertical = 2
 columns = 9
 script = ExtResource("2_vwm0l")
 direction_knob = NodePath("../../DirectionKnob")
+start_pad = NodePath("../../StartPad")
+beat_timer = NodePath("../../BeatTimer")
 
 [node name="PressPad" parent="HUD/Grid" instance=ExtResource("3_lqy58")]
 layout_mode = 2
@@ -293,3 +295,6 @@ offset_left = 673.0
 offset_top = 18.0
 offset_right = 673.0
 offset_bottom = 18.0
+
+[node name="BeatTimer" type="Timer" parent="."]
+wait_time = 0.2

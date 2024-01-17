@@ -28,4 +28,5 @@ func change_state(value: Game.PadState) -> void:
 		Game.PadState.DOWN: display.play_anim("down")
 		Game.PadState.LEFT: display.play_anim("left")
 		Game.PadState.RIGHT: display.play_anim("right")
-		Game.PadState.EMPTY: display.play_anim("wave")
+		Game.PadState.EMPTY: display.play_anim("RESET")
+		_: display.play_anim("wave")
