@@ -126,7 +126,7 @@ func state_to(start: int, direction: Game.PadState, on_buffer := false) -> int:
 
 func is_horizontal(state: int) -> bool:
 	return state == Game.PadState.LEFT \
-		|| Game.PadState.RIGHT
+		|| state == Game.PadState.RIGHT
 
 func is_single_bit(state: int) -> bool:
 	return state == Game.PadState.LEFT \
@@ -187,7 +187,7 @@ func step() -> void:
 			and state_to(i, buffer[i], true) == Game.PadState.WALL:
 
 			@warning_ignore("integer_division")
-			bounced.emit(i % columns if is_horizontal(buffer[i]) else i / columns)
+			bounced.emit(i / columns if is_horizontal(buffer[i]) else i % columns)
 
 func test_near_walls() -> void:
 	assert(columns > 1, "this test makes no sense when columns == 1")
