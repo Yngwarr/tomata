@@ -8,7 +8,14 @@ extends Node2D
 @onready var start_pad: PressPad = $StartPad
 @onready var direction_knob: SnappingKnob = $DirectionKnob
 
-enum PadState { EMPTY, UP, RIGHT, DOWN, LEFT }
+enum PadState {
+	EMPTY = 0,
+	UP    = 0b00001,
+	RIGHT = 0b00010,
+	DOWN  = 0b00100,
+	LEFT  = 0b01000,
+	WALL  = 0b10000
+}
 
 func _ready() -> void:
 	start_pad.pressed.connect(start)
