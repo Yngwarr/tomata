@@ -52,6 +52,9 @@ func _ready() -> void:
 
 		c.pressed.connect(pad_pressed)
 		c.index = pad_index
+		c.gx = pad_index % columns
+		c.gy = pad_index / columns
+		bounced.connect(c.bounce)
 		pad_index += 1
 		pads.append(c)
 		buffer.append(Game.PadState.EMPTY)
@@ -187,7 +190,10 @@ func step() -> void:
 			and state_to(i, buffer[i], true) == Game.PadState.WALL:
 
 			@warning_ignore("integer_division")
-			bounced.emit(i / columns if is_horizontal(buffer[i]) else i % columns)
+			bounced.emit(
+				i / columns if is_horizontal(buffer[i]) else i % columns,
+				is_horizontal(buffer[i])
+			)
 
 func test_near_walls() -> void:
 	assert(columns > 1, "this test makes no sense when columns == 1")

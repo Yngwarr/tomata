@@ -8,5 +8,5 @@ func _ready() -> void:
 		assert(c is AudioStreamPlayer, "Speaker can only contain AudioStreamPlayer nodes")
 		player.append(c)
 
-func play_sound(number: int) -> void:
+func play_sound(number: int, _h: bool) -> void:
 	player[number].play()

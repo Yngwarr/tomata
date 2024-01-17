@@ -9,6 +9,8 @@ signal released(index: int)
 @onready var pad: PressPad = $PressPad
 
 var index: int
+var gx: int
+var gy: int
 var state: int
 
 func _ready() -> void:
@@ -20,6 +22,11 @@ func on_pressed() -> void:
 
 func on_released() -> void:
 	released.emit(index)
+
+func bounce(idx: int, horizontal: bool) -> void:
+	if horizontal and gy == idx \
+		or not horizontal and gx == idx:
+		display.bounce(horizontal)
 
 func change_state(value: Game.PadState) -> void:
 	state = value
