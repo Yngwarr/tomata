@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csahdmph2aji4"]
+[gd_scene load_steps=8 format=3 uid="uid://csahdmph2aji4"]
 
 [ext_resource type="Script" path="res://src/Game.gd" id="1_wmfvw"]
 [ext_resource type="Script" path="res://src/Grid.gd" id="2_vwm0l"]
@@ -6,16 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qdwx3kd7wyd2" path="res://scenes/Knob.tscn" id="3_um6dn"]
 [ext_resource type="PackedScene" uid="uid://0iqhotbf07b2" path="res://scenes/SnappingKnob.tscn" id="4_3leu0"]
 [ext_resource type="PackedScene" uid="uid://cuk26q7f3uvoj" path="res://scenes/PressPad.tscn" id="5_tyfly"]
-[ext_resource type="PackedScene" uid="uid://cmk4coljo6jb3" path="res://scenes/Speaker.tscn" id="7_wpfpf"]
-[ext_resource type="AudioStream" uid="uid://d25s84v6x76x7" path="res://sfx/0.wav" id="8_ul41t"]
-[ext_resource type="AudioStream" uid="uid://cxpy8wld3g5xe" path="res://sfx/1.wav" id="9_elxus"]
-[ext_resource type="AudioStream" uid="uid://cj5aalmq7cdve" path="res://sfx/2.wav" id="10_gydn5"]
-[ext_resource type="AudioStream" uid="uid://bvp2pdkljt574" path="res://sfx/3.wav" id="11_fbxbw"]
-[ext_resource type="AudioStream" uid="uid://ks616mrwwmc2" path="res://sfx/4.wav" id="12_411ef"]
-[ext_resource type="AudioStream" uid="uid://cdudwchrgsiq5" path="res://sfx/5.wav" id="13_oy5c3"]
-[ext_resource type="AudioStream" uid="uid://drxm4sv0yrphj" path="res://sfx/6.wav" id="14_qygcc"]
-[ext_resource type="AudioStream" uid="uid://6x4jxvtk4ljw" path="res://sfx/7.wav" id="15_pjh6y"]
-[ext_resource type="AudioStream" uid="uid://d3gxsy44nkh0c" path="res://sfx/8.wav" id="16_scp06"]
+[ext_resource type="PackedScene" uid="uid://dvcfth0d8fudu" path="res://scenes/Speaker.tscn" id="7_wpfpf"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wmfvw")
@@ -310,39 +301,3 @@ offset_bottom = 18.0
 wait_time = 0.2
 
 [node name="Speaker" parent="." instance=ExtResource("7_wpfpf")]
-
-[node name="Sound0" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("8_ul41t")
-max_polyphony = 20
-
-[node name="Sound1" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("9_elxus")
-max_polyphony = 20
-
-[node name="Sound2" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("10_gydn5")
-max_polyphony = 20
-
-[node name="Sound3" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("11_fbxbw")
-max_polyphony = 20
-
-[node name="Sound4" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("12_411ef")
-max_polyphony = 20
-
-[node name="Sound5" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("13_oy5c3")
-max_polyphony = 20
-
-[node name="Sound6" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("14_qygcc")
-max_polyphony = 20
-
-[node name="Sound7" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("15_pjh6y")
-max_polyphony = 20
-
-[node name="Sound8" type="AudioStreamPlayer" parent="Speaker"]
-stream = ExtResource("16_scp06")
-max_polyphony = 20

@@ -1,6 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmk4coljo6jb3"]
+[gd_scene load_steps=11 format=3 uid="uid://dvcfth0d8fudu"]
 
 [ext_resource type="Script" path="res://src/Speaker.gd" id="1_0wly5"]
+[ext_resource type="AudioStream" uid="uid://d25s84v6x76x7" path="res://sfx/0.wav" id="2_euwnb"]
+[ext_resource type="AudioStream" uid="uid://cxpy8wld3g5xe" path="res://sfx/1.wav" id="3_l8gq6"]
+[ext_resource type="AudioStream" uid="uid://cj5aalmq7cdve" path="res://sfx/2.wav" id="4_o36nr"]
+[ext_resource type="AudioStream" uid="uid://bvp2pdkljt574" path="res://sfx/3.wav" id="5_rbqxm"]
+[ext_resource type="AudioStream" uid="uid://ks616mrwwmc2" path="res://sfx/4.wav" id="6_o7qfo"]
+[ext_resource type="AudioStream" uid="uid://cdudwchrgsiq5" path="res://sfx/5.wav" id="7_7wnen"]
+[ext_resource type="AudioStream" uid="uid://drxm4sv0yrphj" path="res://sfx/6.wav" id="8_hfwjs"]
+[ext_resource type="AudioStream" uid="uid://6x4jxvtk4ljw" path="res://sfx/7.wav" id="9_l4aqp"]
+[ext_resource type="AudioStream" uid="uid://d3gxsy44nkh0c" path="res://sfx/8.wav" id="10_0eryx"]
 
 [node name="Speaker" type="Node"]
 script = ExtResource("1_0wly5")
+
+[node name="Sound0" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_euwnb")
+max_polyphony = 20
+
+[node name="Sound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l8gq6")
+max_polyphony = 20
+
+[node name="Sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o36nr")
+max_polyphony = 20
+
+[node name="Sound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rbqxm")
+max_polyphony = 20
+
+[node name="Sound4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o7qfo")
+max_polyphony = 20
+
+[node name="Sound5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7wnen")
+max_polyphony = 20
+
+[node name="Sound6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hfwjs")
+max_polyphony = 20
+
+[node name="Sound7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_l4aqp")
+max_polyphony = 20
+
+[node name="Sound8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0eryx")
+max_polyphony = 20

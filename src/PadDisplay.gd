@@ -1,13 +1,9 @@
 class_name PadDisplay
-extends Sprite2D
+extends Node2D
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var direction_anim: AnimationPlayer = $Direction/AnimationPlayer
 
 func play_anim(anim_name: String):
-	if anim.is_playing():
-		anim.stop()
-	anim.play(anim_name)
-
-## deprecated
-func play_wave() -> void:
-	play_anim("wave")
+	if direction_anim.is_playing():
+		direction_anim.stop()
+	direction_anim.play(anim_name)
