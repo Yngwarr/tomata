@@ -37,6 +37,8 @@ var buffer: Array[int]
 func _ready() -> void:
 	Test.run(test_near_walls)
 	Test.run(test_step_to)
+	Test.run(test_is_single_bit)
+	Test.run(test_rotate_bits)
 
 	start_pad.pressed.connect(on_start_pad_pressed)
 	beat_timer.timeout.connect(step)
@@ -117,17 +119,36 @@ func state_to(start: int, direction: Game.PadState) -> Game.PadState:
 
 	return pads[step_index].state
 
+func is_single_bit(state: int) -> bool:
+	return state == Game.PadState.LEFT \
+		|| state == Game.PadState.RIGHT \
+		|| state == Game.PadState.UP \
+		|| state == Game.PadState.DOWN
+
+func rotate_bits(state: int) -> int:
+	var new_state: int = 0
+
+	if state & Game.PadState.LEFT != 0: new_state |= Game.PadState.UP
+	if state & Game.PadState.UP != 0: new_state |= Game.PadState.RIGHT
+	if state & Game.PadState.RIGHT != 0: new_state |= Game.PadState.DOWN
+	if state & Game.PadState.DOWN != 0: new_state |= Game.PadState.LEFT
+
+	return new_state
+
 func step() -> void:
 	var length := len(buffer)
 	for i in range(length):
 		buffer[i] = Game.PadState.EMPTY
 
 	for i in range(length):
-		var state = pads[i].state
+		var state: int = pads[i].state
 		var left := state_to(i, Game.PadState.LEFT)
 		var right := state_to(i, Game.PadState.RIGHT)
 		var up := state_to(i, Game.PadState.UP)
 		var down := state_to(i, Game.PadState.DOWN)
+
+		if not is_single_bit(state):
+			state = rotate_bits(state)
 
 		if left & Game.PadState.RIGHT > 0: buffer[i] |= Game.PadState.RIGHT
 		if right & Game.PadState.LEFT > 0: buffer[i] |= Game.PadState.LEFT
@@ -213,3 +234,23 @@ func test_step_to() -> void:
 			"got confused moving up from the bottom-right corner")
 	Test.are_eq(step_to(bottom_right, Game.PadState.DOWN), -1,
 			"can go down through the wall from the bottom-right corner")
+
+func test_is_single_bit() -> void:
+	Test.are_eq(is_single_bit(1), true)
+	Test.are_eq(is_single_bit(2), true)
+	Test.are_eq(is_single_bit(3), false)
+	Test.are_eq(is_single_bit(4), true)
+	Test.are_eq(is_single_bit(5), false)
+	Test.are_eq(is_single_bit(6), false)
+	Test.are_eq(is_single_bit(7), false)
+	Test.are_eq(is_single_bit(8), true)
+
+func test_rotate_bits() -> void:
+	Test.are_eq(rotate_bits(Game.PadState.LEFT | Game.PadState.RIGHT),
+			Game.PadState.UP | Game.PadState.DOWN)
+	Test.are_eq(rotate_bits(Game.PadState.UP | Game.PadState.DOWN),
+			Game.PadState.LEFT | Game.PadState.RIGHT)
+	Test.are_eq(rotate_bits(Game.PadState.LEFT | Game.PadState.UP),
+			Game.PadState.UP | Game.PadState.RIGHT)
+	Test.are_eq(rotate_bits(Game.PadState.LEFT | Game.PadState.RIGHT | Game.PadState.UP),
+			Game.PadState.UP | Game.PadState.DOWN | Game.PadState.RIGHT)

@@ -3,7 +3,7 @@ extends Object
 
 const TESTS_ARE_FATAL := false
 
-static func are_eq(actual: Variant, expected: Variant, msg := "") -> void:
+static func are_eq(actual: Variant, expected: Variant, msg := "test failed") -> void:
 	if actual == expected:
 		return
 
